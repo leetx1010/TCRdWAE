@@ -66,7 +66,7 @@ python 1.train.py \
 
 ## 2. TCR optimization
 ### Parameters
-batch_size             :&nbsp; per-gpu batch size\
+batch_size             :&nbsp; Per-gpu batch size\
 data_file              :&nbsp; Data file name (NOTE: please provide a full file name)\
 load_model_path        :&nbsp; The path to the trained model\
 dataset                :&nbsp; Dataset prefix (used for naming results)\
