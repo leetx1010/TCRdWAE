@@ -162,7 +162,7 @@ class DisentangledBERTForBindingPrediction(BertPreTrainedModel):
         ### From https://github.com/djsutherland/opt-mmd/blob/master/two_sample/mmd.py
         # n = (T.smallest(X.shape[0], Y.shape[0]) // 2) * 2
         n = (X.shape[0] // 2) * 2
-        gamma = 1 / (2 * sigma**2)
+        gamma = 1 / (2 * X.shape[-1] * sigma**2)
         rbf = lambda A, B: torch.exp(-gamma * ((A - B) ** 2).sum(axis=1))
         mmd2 = (rbf(X[:n:2], X[1:n:2]) + rbf(Y[:n:2], Y[1:n:2])
           - rbf(X[:n:2], Y[1:n:2]) - rbf(X[1:n:2], Y[:n:2])).mean()
